@@ -62,8 +62,7 @@ class KegControl extends React.Component {
   handleAddingNewKegToList = (newKeg) => {
     const newKegList = this.state.kegList.concat(newKeg);
     this.setState({
-      kegList: newKegList,
-      formVisibleOnPage: "keg-list"
+      kegList: newKegList
     });
   }
 
@@ -103,7 +102,7 @@ class KegControl extends React.Component {
 
     if (this.state.selectedKeg != null) {
       currentVisibleState = <KegDetail keg = {this.state.selectedKeg}/>
-      button1 = this.kegListButtonClick;
+      button1 = this.handleClick;
       button1Text = "Return to Keg List"
     }
     else if (this.state.formVisibleOnPage === "add-keg") {
@@ -118,18 +117,15 @@ class KegControl extends React.Component {
     } 
     else if (this.state.formVisibleOnPage === 'keg-list') {
       currentVisibleState = <KegList 
-      kegList = {this.state.kegList} 
-      onKegSelection={this.handleChangingSelectedKeg}
+        kegList = {this.state.kegList} 
+        onKegSelection={this.handleChangingSelectedKeg}
       />
 
       button1 = this.landingPageButtonClick; 
       button1Text = "View Home Page";
       button2 = <button onClick={this.addKegButtonClick}>Add Keg</button>
-    } else {
-      currentVisibleState = <KegList/>
-      // button1 = this.landingPageButtonClick;
-      // button1Text = "View Home Page"
-    }
+    } 
+      
     return(
       <React.Fragment>
         {currentVisibleState}
