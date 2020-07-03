@@ -9,7 +9,7 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: "landing-page",
+      formVisibleOnPage: 'landing-page',
       kegList: [
         { name: "beer1",
           brand: "brand1",
@@ -41,7 +41,10 @@ class KegControl extends React.Component {
 
   handleAddingNewKegToList = (newKeg) => {
     const newKegList = this.state.kegList.concat(newKeg);
-    this.setState({kegList: newKegList});
+    this.setState({
+      kegList: newKegList,
+      formVisibleOnPage: "keg-list"
+    });
   }
 
   landingPageButtonClick = () => {
