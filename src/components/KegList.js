@@ -3,13 +3,38 @@ import Keg from "./Keg";
 import PropTypes from 'prop-types';
 import {v4} from "uuid";
 
-const kegList = []
+const kegList = [
+  { name: "beer1",
+    brand: "brand1",
+    price: 85,
+    alcoholContent: 6,
+    pintsLeft: 124,
+  },
+  { name: "beer2",
+  brand: "brand2",
+  price: 85,
+  alcoholContent: 6,
+  pintsLeft: 124,
+  },
+  { name: "beer3",
+  brand: "brand3",
+  price: 85,
+  alcoholContent: 6,
+  pintsLeft: 124,
+  },
+  { name: "beer4",
+  brand: "brand4",
+  price: 85,
+  alcoholContent: 6,
+  pintsLeft: 124,
+  }
+]
 
 function KegList(props){
   return(
     <React.Fragment>
       <hr/>
-      {props.kegList.map((keg) => 
+      {kegList.map((keg) => 
       <Keg
         name = {keg.name}
         brand = {keg.brand}

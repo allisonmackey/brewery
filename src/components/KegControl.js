@@ -1,5 +1,6 @@
 import React from "react";
 import LandingPage from "./LandingPage";
+import KegList from "./KegList";
 
 
 class KegControl extends React.Component {
@@ -32,11 +33,11 @@ class KegControl extends React.Component {
       button1 = this.kegListButtonClick;
       button1Text = "View Our Keg List"
     } 
-    // else if (this.state.formVisibleOnPage === 'keg-list') {
-    //   currentVisibleState = <KegList/>
-    //   button1 = this.landingPageButtonClick; 
-    //   buttonText = "View Home Page";
-    // }
+    else if (this.state.formVisibleOnPage === 'keg-list') {
+      currentVisibleState = <KegList/>
+      button1 = this.landingPageButtonClick; 
+      button1Text = "View Home Page";
+    }
     return(
       <React.Fragment>
         {currentVisibleState}
