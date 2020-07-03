@@ -46,8 +46,6 @@ class KegList extends React.Component {
       currentPints[index].pintsLeft -= 1;
       this.setState({ kegList: currentPints});
     }
-    console.log("CurrentPints", currentPints[index])
-    console.log("Keg List", currentPints)
   }
 
   render() {

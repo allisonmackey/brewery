@@ -7,7 +7,7 @@ function LandingPage(){
       <p>Info will go here!</p>
       <p>Contact info/location will go here</p>
       <p>Hours will go here</p>
-      <img src="" altText="photo will be placed here!"></img>
+      <img src="" alttext="photo will be placed here!"></img>
     </React.Fragment>
   );
 }
