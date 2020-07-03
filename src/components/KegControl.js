@@ -10,32 +10,32 @@ class KegControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: "landing-page",
-      kegList: []
-      //   { name: "beer1",
-      //     brand: "brand1",
-      //     price: 85,
-      //     alcoholContent: 6,
-      //     pintsLeft: 124
-      //   },
-      //   { name: "beer2",
-      //     brand: "brand2",
-      //     price: 85,
-      //     alcoholContent: 6,
-      //     pintsLeft: 124
-      //   },
-      //   { name: "beer3",
-      //     brand: "brand3",
-      //     price: 85,
-      //     alcoholContent: 6,
-      //     pintsLeft: 124
-      //   },
-      //   { name: "beer4",
-      //     brand: "brand4",
-      //     price: 85,
-      //     alcoholContent: 6,
-      //     pintsLeft: 124
-      //   }
-      // ]
+      kegList: [
+        { name: "beer1",
+          brand: "brand1",
+          price: 85,
+          alcoholContent: 6,
+          pintsLeft: 124
+        },
+        { name: "beer2",
+          brand: "brand2",
+          price: 85,
+          alcoholContent: 6,
+          pintsLeft: 124
+        },
+        { name: "beer3",
+          brand: "brand3",
+          price: 85,
+          alcoholContent: 6,
+          pintsLeft: 124
+        },
+        { name: "beer4",
+          brand: "brand4",
+          price: 85,
+          alcoholContent: 6,
+          pintsLeft: 124
+        }
+      ]
     };
   }
 
@@ -76,7 +76,7 @@ class KegControl extends React.Component {
       button1Text = "View Our Keg List"
     } 
     else if (this.state.formVisibleOnPage === 'keg-list') {
-      currentVisibleState = <KegList/>
+      currentVisibleState = <KegList kegList = {this.state.kegList}/>
       button1 = this.landingPageButtonClick; 
       button1Text = "View Home Page";
       button2 = <button onClick={this.addKegButtonClick}>Add Keg</button>
@@ -86,10 +86,11 @@ class KegControl extends React.Component {
       button1 = this.kegListButtonClick;
       button1Text = "Return to Keg List"
     } 
-    // else 
-    //   currentVisibleState = <KegList/>
-    //   button1 = this.landingPageButtonClick;
-    //   button1Text = "View Home Page"
+    else {
+      currentVisibleState = <KegList/>
+      // button1 = this.landingPageButtonClick;
+      // button1Text = "View Home Page"
+    }
     return(
       <React.Fragment>
         {currentVisibleState}
