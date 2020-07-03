@@ -23,6 +23,7 @@ class KegControl extends React.Component {
     })
   }
 
+
   render () {
     let currentVisibleState = null;
     let button1 = null;
