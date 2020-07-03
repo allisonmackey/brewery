@@ -14,7 +14,7 @@ function KegList(props){
         price = {keg.price}
         alcoholContent = {keg.alcoholContent}
         pintsLeft = {keg.pintsLeft}
-        buy = {buyPintClick}
+        // buy = {keg.buyPintClick}
         id = {v4()}
         index = {index}
         key = {v4()}
@@ -22,21 +22,21 @@ function KegList(props){
       )}
     </React.Fragment>
   ); 
-  function buyPintClick(index){
-    const currentPints = [...props.kegList];
-    if (currentPints[index].pintsLeft <= 1 || isNaN(currentPints[index].pintsLeft)) {
-      currentPints[index].pintsLeft = "Out of Stock";
-      props.kegList = currentPints;
-    } else {
-      currentPints[index].pintsLeft -= 1;
-      props.kegList = currentPints;
-    }
-  }
+  // function buyPintClick(index){
+  //   const currentPints = [...props.kegList];
+  //   if (currentPints[index].pintsLeft <= 1 || isNaN(currentPints[index].pintsLeft)) {
+  //     currentPints[index].pintsLeft = "Out of Stock";
+  //     props.kegList = currentPints;
+  //   } else {
+  //     currentPints[index].pintsLeft -= 1;
+  //     props.kegList = currentPints;
+  //   }
+  // }
 }
 
 KegList.propTypes = {
   kegList: PropTypes.array,
-  buyPintClick: PropTypes.func
+  // buyPintClick: PropTypes.func
 }
 export default KegList;
 
