@@ -41,16 +41,20 @@ class KegControl extends React.Component {
     };
   }
   //  eventual code for buying a pint? might need to go in kegList instead. 
-  // function buyPintClick(index){
-  //   const currentPints = [...props.kegList];
-  //   if (currentPints[index].pintsLeft <= 1 || isNaN(currentPints[index].pintsLeft)) {
-  //     currentPints[index].pintsLeft = "Out of Stock";
-  //     props.kegList = currentPints;
-  //   } else {
-  //     currentPints[index].pintsLeft -= 1;
-  //     props.kegList = currentPints;
-  //   }
-  // }
+  handleBuyingPint(index){
+    const currentPints = [...this.state.kegList];
+    if (currentPints[index].pintsLeft <= 1 || isNaN(currentPints[index].pintsLeft)) {
+      currentPints[index].pintsLeft = "Out of Stock";
+      this.setState({
+        kegList: currentPints
+      });
+    } else {
+      currentPints[index].pintsLeft -= 1;
+      this.setState({
+        kegList: currentPints
+      });
+    }
+  }
 
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.state.kegList.filter(keg => keg.id === id)[0];
@@ -124,6 +128,7 @@ class KegControl extends React.Component {
       currentVisibleState = <KegList 
         kegList = {this.state.kegList} 
         onKegSelection={this.handleChangingSelectedKeg}
+        buyingPint = {this.handleBuyingPint}
       />
 
       button1 = this.landingPageButtonClick; 
