@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {v4} from 'uuid';
 
 function NewKegForm(props){
-
   return(
     <React.Fragment>
       <form onSubmit = {handleNewKegFormSubmission}>
