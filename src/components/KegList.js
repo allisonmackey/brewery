@@ -21,7 +21,7 @@ function KegList(props){
       />
       )}
     </React.Fragment>
-  )
+  );
 }
 
 KegList.propTypes = {
