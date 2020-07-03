@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Keg(props){
-  // function buyPint(){
-  //   props.buy(props.index)
-  // }
+  function buyPint(){
+    props.buy(props.index)
+  };
   return(
     <React.Fragment>
       <div onClick = {() => props.whenKegClicked(props.id)}>
@@ -12,8 +12,8 @@ function Keg(props){
         <p>Price: ${props.price}.00 {props.alcoholContent}% per pint</p> 
         <p>Pints Left: {props.pintsLeft}</p>
         <br/>
-        <button onClick={() => props.buy(props.index)}>Buy Pint</button>
       </div>
+      <button onClick={buyPint}>Buy Pint</button>
     </React.Fragment>
   );
 }
