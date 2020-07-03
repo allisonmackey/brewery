@@ -70,7 +70,11 @@ class KegControl extends React.Component {
     if (this.state.selectedKeg != null) {
       this.setState({
         formVisibleOnPage: "keg-list",
-        selectedTicket: null
+        selectedKeg: null
+      })
+    } else {
+      this.setState({
+        formVisibleOnPage: "landing-page"
       })
     }
   }
@@ -104,7 +108,7 @@ class KegControl extends React.Component {
       currentVisibleState = <KegDetail 
       keg = {this.state.selectedKeg}/>
       button1 = this.handleClick;
-      button1Text = "Return to Keg List"
+      button1Text = "Return to Keg List";
     }
     else if (this.state.formVisibleOnPage === "add-keg") {
       currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>
