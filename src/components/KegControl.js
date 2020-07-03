@@ -73,7 +73,12 @@ class KegControl extends React.Component {
     let button2 = null;
     // let button2Text = null;
 
-    if (this.state.formVisibleOnPage === 'landing-page') {
+    if (this.state.formVisibleOnPage === "add-keg") {
+      currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>
+      button1 = this.kegListButtonClick;
+      button1Text = "Return to Keg List"
+    } 
+    else if (this.state.formVisibleOnPage === 'landing-page') {
       currentVisibleState = <LandingPage/>;
       button1 = this.kegListButtonClick;
       button1Text = "View Our Keg List"
@@ -83,13 +88,7 @@ class KegControl extends React.Component {
       button1 = this.landingPageButtonClick; 
       button1Text = "View Home Page";
       button2 = <button onClick={this.addKegButtonClick}>Add Keg</button>
-    }
-    else if (this.state.formVisibleOnPage === "add-keg") {
-      currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>
-      button1 = this.kegListButtonClick;
-      button1Text = "Return to Keg List"
-    } 
-    else {
+    } else {
       currentVisibleState = <KegList/>
       // button1 = this.landingPageButtonClick;
       // button1Text = "View Home Page"

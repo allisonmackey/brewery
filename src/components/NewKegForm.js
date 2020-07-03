@@ -4,7 +4,7 @@ import {v4} from 'uuid';
 
 function NewKegForm(props){
   function handleNewKegFormSubmission(event) {
-    event.PreventDefault();
+    event.preventDefault();
     props.onNewKegCreation({
       name: event.target.name.value,
       brand: event.target.brand.value,
