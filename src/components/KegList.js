@@ -7,6 +7,7 @@ class KegList extends React.Component {
   constructor(props){
     super(props); 
     this.state = {
+      formVisibleOnPage: null,
       kegList: [
         { name: "beer1",
           brand: "brand1",
@@ -36,6 +37,11 @@ class KegList extends React.Component {
     };
     this.buyPintClick = this.buyPintClick.bind(this)
   }
+
+  handleAddingNewKegToList = (newKeg) => {
+    const newKegList = this.state.kegList.concat(newKeg);
+    this.setState({kegList: newKegList})
+  }
     
   buyPintClick(index){
     const currentPints = [...this.state.kegList];
@@ -49,6 +55,7 @@ class KegList extends React.Component {
   }
 
   render() {
+
     return(
       <React.Fragment>
         <hr/>
