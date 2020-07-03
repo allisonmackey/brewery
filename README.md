@@ -2,7 +2,7 @@
 
 #### Author: Allison Mackey July 3rd, 2020
 
-### Description:
+### Description
 
 A website for a taproom that allows the user to view landing page, view the menu/list with all available kegs, add a keg to the menu/list, and click a button to 'buy a pint' which will decrease the total pints left in that particular keg by 1. 
 
