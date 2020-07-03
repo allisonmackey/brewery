@@ -3,7 +3,6 @@ import LandingPage from "./LandingPage";
 import KegList from "./KegList";
 import NewKegForm from "./NewKegForm";
 import KegDetail from "./KegDetail"
-// import Keg from "./Keg";
 
 
 class KegControl extends React.Component {
@@ -13,28 +12,28 @@ class KegControl extends React.Component {
       formVisibleOnPage: 'landing-page',
       selectedKeg: null,
       kegList: [
-        { name: "beer1",
-          brand: "brand1",
-          price: 85,
-          alcoholContent: 6,
+        { name: "Mo-haze-ic IPA",
+          brand: "Migration Brewery",
+          price: 170,
+          alcoholContent: 6.1,
           pintsLeft: 124
         },
-        { name: "beer2",
-          brand: "brand2",
-          price: 85,
-          alcoholContent: 6,
+        { name: "Starburst IPA",
+          brand: "Ecliptic Brewing",
+          price: 180,
+          alcoholContent: 7.8,
           pintsLeft: 124
         },
-        { name: "beer3",
-          brand: "brand3",
-          price: 85,
-          alcoholContent: 6,
+        { name: "IPA",
+          brand: "Bouy Beer Co.",
+          price: 150,
+          alcoholContent: 7.5,
           pintsLeft: 124
         },
-        { name: "beer4",
-          brand: "brand4",
-          price: 85,
-          alcoholContent: 6,
+        { name: "Ranier",
+          brand: "Pabst Brewing",
+          price: 100,
+          alcoholContent: 4.73,
           pintsLeft: 124
         }
       ]
@@ -106,6 +105,7 @@ class KegControl extends React.Component {
     let button1 = null;
     let button1Text = null;
     let button2 = null;
+    let header = null;
     // let button2Text = null;
 
     if (this.state.selectedKeg != null) {
@@ -129,9 +129,8 @@ class KegControl extends React.Component {
         kegList = {this.state.kegList} 
         onKegSelection={this.handleChangingSelectedKeg}
         buyingPint = {this.handleBuyingPint}
-        
       />
-
+      header = "MENU"
       button1 = this.landingPageButtonClick; 
       button1Text = "View Home Page";
       button2 = <button onClick={this.addKegButtonClick}>Add Keg</button>
@@ -139,9 +138,12 @@ class KegControl extends React.Component {
       
     return(
       <React.Fragment>
+        <h4>{header}</h4>
         {currentVisibleState}
-        <button onClick={button1}>{button1Text}</button>
-        {button2}
+        <div className="button-wrapper">
+          <button onClick={button1}>{button1Text}</button>
+          {button2}
+        </div>
       </React.Fragment>
     );
   }
