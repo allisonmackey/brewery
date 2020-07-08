@@ -16,25 +16,29 @@ class KegControl extends React.Component {
           brand: "Migration Brewery",
           price: 170,
           alcoholContent: 6.1,
-          pintsLeft: 124
+          pintsLeft: 124,
+          id: 1
         },
         { name: "Starburst IPA",
           brand: "Ecliptic Brewing",
           price: 180,
           alcoholContent: 7.8,
-          pintsLeft: 124
+          pintsLeft: 124,
+          id: 2
         },
         { name: "IPA",
           brand: "Bouy Beer Co.",
           price: 150,
           alcoholContent: 7.5,
-          pintsLeft: 124
+          pintsLeft: 124,
+          id: 3
         },
         { name: "Ranier",
           brand: "Pabst Brewing",
           price: 100,
           alcoholContent: 4.73,
-          pintsLeft: 124
+          pintsLeft: 124,
+          id: 4
         }
       ]
     };
