@@ -69,18 +69,20 @@ class KegControl extends React.Component {
     });
   }
 
-  handleClick = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
-        formVisibleOnPage: "keg-list",
-        selectedKeg: null
-      })
-    } else {
-      this.setState({
-        formVisibleOnPage: "landing-page"
-      })
-    }
-  }
+  // handleClick = () => {
+  //   if (this.state.selectedKeg != null) {
+  //     this.setState({
+  //       formVisibleOnPage: "keg-list",
+  //       selectedKeg: null
+  //     })
+  //     console.log(this.state.selectedKeg)
+  //   } 
+  //   else {
+  //     this.setState(prevState => ({
+  //       formVisibleOnPage: !prevState.formVisibleOnPage
+  //     }));
+  //   }
+  // }
 
   landingPageButtonClick = () => {
     this.setState({
@@ -89,9 +91,16 @@ class KegControl extends React.Component {
   }
 
   kegListButtonClick = () => {
-    this.setState({
-      formVisibleOnPage: "keg-list"
-    });
+    if (this.state.selectedKeg != null) {
+      this.setState({
+        formVisibleOnPage: "keg-list",
+        selectedKeg: null
+      })
+    } else {
+      this.setState({
+        formVisibleOnPage: "keg-list"
+      });
+    }
   }
 
   addKegButtonClick = () => {
@@ -111,7 +120,7 @@ class KegControl extends React.Component {
     if (this.state.selectedKeg != null) {
       currentVisibleState = <KegDetail 
       keg = {this.state.selectedKeg}/>
-      button1 = this.handleClick;
+      button1 = this.kegListButtonClick;
       button1Text = "Return to Keg List";
     }
     else if (this.state.formVisibleOnPage === "add-keg") {

@@ -13,7 +13,7 @@ View detailed set up instructions [here](./INSTALL.md)
 
 ### Known Bugs
 
-No bugs have been identified at the time of this update.
+When keg is selected the detail page only shows the first keg in the list, not the keg that was clicked on.
 
 ## Support and Contact Information
 
